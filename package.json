@@ -1,0 +1,33 @@
+{
+  "name": "starling-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "bin": {
+    "starling": "bin/starling"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "bin/",
+    "src/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jiro",
+  "license": "MIT",
+  "dependencies": {
+    "accounting": "^0.4.1",
+    "boxen": "^4.2.0",
+    "commander": "^4.1.1",
+    "configstore": "^5.0.0",
+    "esm": "^3.2.25",
+    "inquirer": "^7.0.4",
+    "ora": "^4.0.3",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.8"
+  }
+}

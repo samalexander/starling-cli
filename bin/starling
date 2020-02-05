@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const Configstore = require('configstore');
+var pjson = require('../package.json');
+require = require('esm')(module /*, options*/);
+const { init, checkBalance } = require('../src/main');
+
+const config = new Configstore(pjson.name);
+
+program.version(pjson.version);
+
+program
+    .command('init')
+    .description('Initialise connection to Starling')
+    .action(() => {
+        init(config);
+    });
+
+program
+    .command('balance')
+    .description('Fetch your Starling account balance')
+    .action(() => {
+        checkBalance(config);
+    });
+
+program.parse(process.argv);
