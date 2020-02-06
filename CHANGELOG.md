@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/JiroUK/starling-cli/compare/v1.0.4...v1.0.5) (2020-02-06)
+
+
+### Bug Fixes
+
+* Show instructions when running init command ([8de87c5](https://github.com/JiroUK/starling-cli/commit/8de87c5808cda92a7041b060e8100e6173b49b13))
+
 ### [1.0.4](https://github.com/JiroUK/starling-cli/compare/v1.0.3...v1.0.4) (2020-02-06)
 
 
