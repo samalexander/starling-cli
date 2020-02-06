@@ -5,6 +5,7 @@ import request from 'request-promise-native';
 import accounting from 'accounting';
 import columnify from 'columnify';
 import chalk from 'chalk';
+import open from 'open';
 
 const currencyMap = {
     GBP: '£',
@@ -41,14 +42,27 @@ function formatDate(date, time = false) {
 }
 
 export async function init(config) {
-    const questions = [
+    console.log(`We'll walk you through connecting to your Starling bank account. First off...`);
+    const { openBrowser } = await inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'openBrowser',
+            message: 'Open the Starling Developer portal in your browser?',
+            default: true
+        }
+    ]);
+    if (openBrowser) { await open('https://developer.starlingbank.com/signup'); }
+    console.log(`Now, create an account or sign in.`);
+    console.log(`Then, under Settings, choose Account and then connect your Starling account. You'll need the mobile app to complete this step.`);
+    console.log(`Then, under Personal Access, click Create Token. Generate a new token with the following scopes: account:read, account-list:read, balance:read, transaction:read.`);
+    console.log(`Copy the token and enter it below.`);
+    const { token } = await inquirer.prompt([
         {
             type: 'password',
             name: 'token',
             message: 'Personal Access Token'
         }
-    ];
-    const { token } = await inquirer.prompt(questions);
+    ]);
     const spinner = ora({ text: 'Fetching accounts...', color: 'yellow' }).start();
     try {
         const { accounts } = await request.get('https://api.starlingbank.com/api/v2/accounts', {
@@ -58,7 +72,7 @@ export async function init(config) {
             }
         });
         config.set({ token, accounts });
-        spinner.succeed('Accounts saved');
+        spinner.succeed('Account connected!');
     } catch ({ error }) {
         spinner.fail(error.error_description);
     }
