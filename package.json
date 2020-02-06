@@ -1,7 +1,7 @@
 {
   "name": "starling-cli",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "A CLI tool for querying your Starling Bank account",
   "main": "src/main.js",
   "bin": {
     "starling": "bin/starling"
@@ -14,7 +14,12 @@
     "src/"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiroUK/starling-cli.git"
   },
   "keywords": [],
   "author": "Jiro",
@@ -31,5 +36,8 @@
     "ora": "^4.0.3",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.8"
+  },
+  "devDependencies": {
+    "standard-version": "^7.1.0"
   }
 }
