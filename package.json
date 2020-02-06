@@ -21,7 +21,11 @@
     "type": "git",
     "url": "git+https://github.com/JiroUK/starling-cli.git"
   },
-  "keywords": [],
+  "keywords": [
+    "starling",
+    "cli",
+    "terminal"
+  ],
   "author": "Jiro",
   "license": "MIT",
   "dependencies": {
