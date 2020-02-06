@@ -27,11 +27,17 @@ function getFirstDayOfMonth() {
     return new Date(date.getFullYear(), date.getMonth(), 1);
 }
 
-function dateToYMD(date) {
-    var d = date.getDate();
-    var m = date.getMonth() + 1; // Month from 0 to 11
-    var y = date.getFullYear();
-    return '' + y + '-' + (m <= 9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
+function formatDate(date, time = false) {
+    const d = date.getDate();
+    const m = date.getMonth() + 1; // Month from 0 to 11
+    const y = date.getFullYear();
+    let dateStr = `${y}-${m <= 9 ? '0' + m : m}-${d <= 9 ? '0' + d : d}`;
+    if (time) {
+        const h = date.getHours();
+        const mm = date.getMinutes();
+        dateStr = dateStr.concat(` ${h <= 9 ? '0' + h : h}:${mm <= 9 ? '0' + mm : mm}`);
+    }
+    return dateStr;
 }
 
 export async function init(config) {
@@ -93,7 +99,7 @@ export async function listTransactions(config) {
         {
             name: 'startDate',
             message: 'Transactions start date (YYYY-MM-DD)',
-            default: dateToYMD(getFirstDayOfMonth()),
+            default: formatDate(getFirstDayOfMonth()),
             validate: (input) => {
                 return isValidDate(input) ? true : 'Date is invalid. Re-enter'
             }
@@ -122,7 +128,7 @@ export async function listTransactions(config) {
 function displayTransactions(feedItems) {
     const columns = columnify(feedItems.map(fi => {
         return {
-            time: dateToYMD(new Date(fi.transactionTime)),
+            time: formatDate(new Date(fi.transactionTime), true),
             amount: directionMap[fi.direction](accounting.formatMoney(fi.amount.minorUnits / 100, { symbol: currencyMap[fi.amount.currency] })),
             name: fi.counterPartyName,
             type: fi.source
