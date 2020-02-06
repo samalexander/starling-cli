@@ -4,7 +4,7 @@ const program = require('commander');
 const Configstore = require('configstore');
 var pjson = require('../package.json');
 require = require('esm')(module /*, options*/);
-const { init, checkBalance } = require('../src/main');
+const { init, checkBalance, listTransactions } = require('../src/main');
 
 const config = new Configstore(pjson.name);
 
@@ -12,6 +12,7 @@ program.version(pjson.version);
 
 program
     .command('init')
+    .alias('i')
     .description('Initialise connection to Starling')
     .action(() => {
         init(config);
@@ -19,9 +20,18 @@ program
 
 program
     .command('balance')
+    .alias('b')
     .description('Fetch your Starling account balance')
     .action(() => {
         checkBalance(config);
+    });
+
+program
+    .command('transactions')
+    .alias('tx')
+    .description('Fetch your Starling account transactions')
+    .action(() => {
+        listTransactions(config);
     });
 
 program.parse(process.argv);
