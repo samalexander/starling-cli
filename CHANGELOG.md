@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/JiroUK/starling-cli/compare/v1.0.5...v1.1.0) (2020-02-10)
+
+
+### Features
+
+* Add new command to query direct debit mandates ([88e34d2](https://github.com/JiroUK/starling-cli/commit/88e34d245b2b426be3b58c8b668cb12cc05d8f1f))
+
 ### [1.0.5](https://github.com/JiroUK/starling-cli/compare/v1.0.4...v1.0.5) (2020-02-06)
 
 
