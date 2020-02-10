@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/JiroUK/starling-cli/compare/v1.1.0...v1.1.1) (2020-02-10)
+
+
+### Bug Fixes
+
+* Add mandates command to README ([09430f6](https://github.com/JiroUK/starling-cli/commit/09430f62dcee683340a385a6ccce33b8e683fe75))
+
 ## [1.1.0](https://github.com/JiroUK/starling-cli/compare/v1.0.5...v1.1.0) (2020-02-10)
 
 
