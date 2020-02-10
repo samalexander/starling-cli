@@ -18,6 +18,12 @@ const directionMap = {
     OUT: chalk.red
 };
 
+const mandateStatusMap = {
+    LIVE: chalk.green,
+    PENDING_CAS: chalk.yellow,
+    CANCELLED: chalk.red
+};
+
 function isValidDate(dateString) {
     const regEx = /^\d{4}-\d{2}-\d{2}$/;
     return dateString.match(regEx) != null;
@@ -54,7 +60,7 @@ export async function init(config) {
     if (openBrowser) { await open('https://developer.starlingbank.com/signup'); }
     console.log(`Now, create an account or sign in.`);
     console.log(`Then, under Settings, choose Account and then connect your Starling account. You'll need the mobile app to complete this step.`);
-    console.log(`Then, under Personal Access, click Create Token. Generate a new token with the following scopes: account:read, account-list:read, balance:read, transaction:read.`);
+    console.log(`Then, under Personal Access, click Create Token. Generate a new token with the following scopes: account:read, account-list:read, balance:read, mandate:read, transaction:read.`);
     console.log(`Copy the token and enter it below.`);
     const { token } = await inquirer.prompt([
         {
@@ -139,6 +145,23 @@ export async function listTransactions(config) {
     }
 }
 
+export async function listMandates(config) {
+    const spinner = ora({ text: 'Fetching mandates...', color: 'yellow' }).start();
+    try {
+        const bearer = config.get('token');
+        const { mandates } = await request.get('https://api.starlingbank.com/api/v2/direct-debit/mandates', {
+            json: true,
+            auth: {
+                bearer
+            }
+        });
+        spinner.stop();
+        displayMandates(mandates);
+    } catch ({ error }) {
+        spinner.fail(error.error_description);
+    }
+}
+
 function displayTransactions(feedItems) {
     const columns = columnify(feedItems.map(fi => {
         return {
@@ -146,6 +169,18 @@ function displayTransactions(feedItems) {
             amount: directionMap[fi.direction](accounting.formatMoney(fi.amount.minorUnits / 100, { symbol: currencyMap[fi.amount.currency] })),
             name: fi.counterPartyName,
             type: fi.source
+        };
+    }));
+    console.log(columns);
+}
+
+function displayMandates(mandateItems) {
+    const columns = columnify(mandateItems.map(mi => {
+        return {
+            originator: mi.originatorName,
+            reference: mi.reference,
+            created: formatDate(new Date(mi.created), true),
+            status: mandateStatusMap[mi.status](mi.status)
         };
     }));
     console.log(columns);

@@ -4,7 +4,7 @@ const program = require('commander');
 const Configstore = require('configstore');
 var pjson = require('../package.json');
 require = require('esm')(module /*, options*/);
-const { init, checkBalance, listTransactions } = require('../src/main');
+const { init, checkBalance, listTransactions, listMandates } = require('../src/main');
 
 const config = new Configstore(pjson.name);
 
@@ -32,6 +32,14 @@ program
     .description('Fetch your Starling account transactions')
     .action(() => {
         listTransactions(config);
+    });
+
+program
+    .command('mandates')
+    .alias('dd')
+    .description('Fetch the Direct Debit mandates on your Starling account')
+    .action(() => {
+        listMandates(config);
     });
 
 program.parse(process.argv);
