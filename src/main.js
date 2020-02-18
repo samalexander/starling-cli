@@ -1,7 +1,7 @@
 import ora from 'ora';
 import boxen from 'boxen';
 import inquirer from 'inquirer';
-import request from 'request-promise-native';
+import axios from 'axios';
 import accounting from 'accounting';
 import columnify from 'columnify';
 import chalk from 'chalk';
@@ -71,13 +71,12 @@ export async function init(config) {
     ]);
     const spinner = ora({ text: 'Fetching accounts...', color: 'yellow' }).start();
     try {
-        const { accounts } = await request.get('https://api.starlingbank.com/api/v2/accounts', {
-            json: true,
-            auth: {
-                bearer: token
+        const { data } = await axios.get('https://api.starlingbank.com/api/v2/accounts', {
+            headers: {
+                Authorization: `Bearer ${token}`
             }
         });
-        config.set({ token, accounts });
+        config.set({ token, accounts: data.accounts });
         spinner.succeed('Account connected!');
     } catch ({ error }) {
         spinner.fail(error.error_description);
@@ -90,14 +89,13 @@ export async function checkBalance(config) {
         const accounts = config.get('accounts');
         const balances = [];
         for (const acc of accounts) {
-            const bearer = config.get('token');
-            const { effectiveBalance } = await request.get(`https://api.starlingbank.com/api/v2/accounts/${acc.accountUid}/balance`, {
-                json: true,
-                auth: {
-                    bearer
+            const token = config.get('token');
+            const { data } = await axios.get(`https://api.starlingbank.com/api/v2/accounts/${acc.accountUid}/balance`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
                 }
             });
-            const balance = accounting.formatMoney(effectiveBalance.minorUnits / 100, { symbol: currencyMap[acc.currency] });
+            const balance = accounting.formatMoney(data.effectiveBalance.minorUnits / 100, { symbol: currencyMap[acc.currency] });
             balances.push(balance);
         }
         spinner.stop();
@@ -128,18 +126,17 @@ export async function listTransactions(config) {
     const { account, startDate } = await inquirer.prompt(questions);
     const spinner = ora({ text: 'Fetching transactions...', color: 'yellow' }).start();
     try {
-        const bearer = config.get('token');
-        const { feedItems } = await request.get(`https://api.starlingbank.com/api/v2/feed/account/${account.accountUid}/category/${account.defaultCategory}`, {
-            json: true,
-            auth: {
-                bearer
+        const token = config.get('token');
+        const { data } = await axios.get(`https://api.starlingbank.com/api/v2/feed/account/${account.accountUid}/category/${account.defaultCategory}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
             },
-            qs: {
+            params: {
                 changesSince: new Date(startDate)
             }
         });
         spinner.stop();
-        displayTransactions(feedItems);
+        displayTransactions(data.feedItems);
     } catch ({ error }) {
         spinner.fail(error.error_description);
     }
@@ -148,15 +145,14 @@ export async function listTransactions(config) {
 export async function listMandates(config) {
     const spinner = ora({ text: 'Fetching mandates...', color: 'yellow' }).start();
     try {
-        const bearer = config.get('token');
-        const { mandates } = await request.get('https://api.starlingbank.com/api/v2/direct-debit/mandates', {
-            json: true,
-            auth: {
-                bearer
+        const token = config.get('token');
+        const { data } = await axios.get('https://api.starlingbank.com/api/v2/direct-debit/mandates', {
+            headers: {
+                Authorization: `Bearer ${token}`
             }
         });
         spinner.stop();
-        displayMandates(mandates);
+        displayMandates(data.mandates);
     } catch ({ error }) {
         spinner.fail(error.error_description);
     }

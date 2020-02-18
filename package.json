@@ -30,6 +30,7 @@
   "license": "MIT",
   "dependencies": {
     "accounting": "^0.4.1",
+    "axios": "^0.19.2",
     "boxen": "^4.2.0",
     "chalk": "^3.0.0",
     "columnify": "^1.5.4",
@@ -38,9 +39,7 @@
     "esm": "^3.2.25",
     "inquirer": "^7.0.4",
     "open": "^7.0.2",
-    "ora": "^4.0.3",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.8"
+    "ora": "^4.0.3"
   },
   "devDependencies": {
     "standard-version": "^7.1.0"
