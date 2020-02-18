@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/JiroUK/starling-cli/compare/v1.1.1...v1.1.2) (2020-02-18)
+
+
+### Bug Fixes
+
+* Replace deprecated request library with axios ([ad15bc4](https://github.com/JiroUK/starling-cli/commit/ad15bc41b7aaa184f23507af8c04cdaf372b4076))
+
 ### [1.1.1](https://github.com/JiroUK/starling-cli/compare/v1.1.0...v1.1.1) (2020-02-10)
 
 
