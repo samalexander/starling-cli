@@ -13,6 +13,17 @@ const currencyMap = {
     EUR: '€'
 };
 
+const statusMap = {
+    UPCOMING: chalk.yellow,
+    PENDING: chalk.yellow,
+    REVERSED: chalk.blue,
+    SETTLED: chalk.green,
+    DECLINED: chalk.red,
+    REFUNDED: chalk.blue,
+    RETRYING: chalk.yellow,
+    ACCOUNT_CHECK: chalk.red
+};
+
 const directionMap = {
     IN: chalk.green,
     OUT: chalk.red
@@ -162,6 +173,7 @@ function displayTransactions(feedItems) {
     const columns = columnify(feedItems.map(fi => {
         return {
             time: formatDate(new Date(fi.transactionTime), true),
+            status: statusMap[fi.status](fi.status),
             amount: directionMap[fi.direction](accounting.formatMoney(fi.amount.minorUnits / 100, { symbol: currencyMap[fi.amount.currency] })),
             name: fi.counterPartyName,
             type: fi.source
