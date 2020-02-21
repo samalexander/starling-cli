@@ -2,13 +2,16 @@
 
 const program = require('commander');
 const Configstore = require('configstore');
-var pjson = require('../package.json');
+const updateNotifier = require('update-notifier');
+var pkg = require('../package.json');
 require = require('esm')(module /*, options*/);
 const { init, checkBalance, listTransactions, listMandates } = require('../src/main');
 
-const config = new Configstore(pjson.name);
+updateNotifier({ pkg }).notify();
 
-program.version(pjson.version);
+const config = new Configstore(pkg.name);
+
+program.version(pkg.version);
 
 program
     .command('init')
