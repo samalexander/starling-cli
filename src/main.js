@@ -21,7 +21,7 @@ const statusMap = {
     DECLINED: chalk.red,
     REFUNDED: chalk.blue,
     RETRYING: chalk.yellow,
-    ACCOUNT_CHECK: chalk.red
+    ACCOUNT_CHECK: chalk.grey
 };
 
 const directionMap = {
