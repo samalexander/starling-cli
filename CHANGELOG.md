@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.5](https://github.com/JiroUK/starling-cli/compare/v1.1.4...v1.1.5) (2020-02-24)
+
+
+### Bug Fixes
+
+* Update account check colour ([17d86a9](https://github.com/JiroUK/starling-cli/commit/17d86a9576afa807977b0068d4e631c54ebadbeb))
+
 ### [1.1.4](https://github.com/JiroUK/starling-cli/compare/v1.1.3...v1.1.4) (2020-02-21)
 
 
