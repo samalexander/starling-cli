@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.2.0 (2020-03-31)
+
+
+### Features
+
+* Add new command to query direct debit mandates ([349310e](https://github.com/JiroUK/starling-cli/commit/349310e779191ed3ac08c59f7062d96201e568c3))
+
+
+### Bug Fixes
+
+* Add mandates command to README ([c95c112](https://github.com/JiroUK/starling-cli/commit/c95c112022913005bc4816b2b5dd9b58d88d5ffe))
+* Display time of transactions ([b3f755a](https://github.com/JiroUK/starling-cli/commit/b3f755aaa978ed73f11d20bef09217c95e68bc3f))
+* Include transaction status ([09d1d00](https://github.com/JiroUK/starling-cli/commit/09d1d00d6fe2a95d39db99edc3ed61721031600c))
+* Notify when update available ([7ab3a2c](https://github.com/JiroUK/starling-cli/commit/7ab3a2c1b31455d26bdce7753fc9b1caa323caec))
+* Replace deprecated request library with axios ([52e81e4](https://github.com/JiroUK/starling-cli/commit/52e81e458b06d1df22a3de6f77565bb30b1d6e42))
+* Show instructions when running init command ([9058b5a](https://github.com/JiroUK/starling-cli/commit/9058b5a42f8d10125abe13ba5774599cf3047b80))
+* Update account check colour ([8d4cc58](https://github.com/JiroUK/starling-cli/commit/8d4cc581562191c8e25dbdd733b35967fac2ddcc))
+* Upgrade dependencies ([c9aaf16](https://github.com/JiroUK/starling-cli/commit/c9aaf16948de223811f5d327b65cc12c3717b486))
+
 ### [1.1.5](https://github.com/JiroUK/starling-cli/compare/v1.1.4...v1.1.5) (2020-02-24)
 
 
