@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JiroUK/starling-cli.git"
+    "url": "git+https://github.com/Jiro-Digital/starling-cli.git"
   },
   "keywords": [
     "starling",
@@ -32,17 +32,17 @@
     "accounting": "^0.4.1",
     "axios": "^0.19.2",
     "boxen": "^4.2.0",
-    "chalk": "^4.0.0",
+    "chalk": "^4.1.0",
     "columnify": "^1.5.4",
-    "commander": "^5.0.0",
+    "commander": "^5.1.0",
     "configstore": "^5.0.1",
     "esm": "^3.2.25",
-    "inquirer": "^7.1.0",
-    "open": "^7.0.3",
-    "ora": "^4.0.3",
+    "inquirer": "^7.2.0",
+    "open": "^7.0.4",
+    "ora": "^4.0.4",
     "update-notifier": "^4.1.0"
   },
   "devDependencies": {
-    "standard-version": "^7.1.0"
+    "standard-version": "^8.0.0"
   }
 }

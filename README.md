@@ -1,8 +1,8 @@
 # Welcome to starling-cli 👋
 [![Version](https://img.shields.io/npm/v/starling-cli.svg)](https://www.npmjs.com/package/starling-cli)
-[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/JiroUK/starling-cli#readme)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/JiroUK/starling-cli/graphs/commit-activity)
-[![License: MIT](https://img.shields.io/github/license/JiroUK/starling-cli)](https://github.com/JiroUK/starling-cli/blob/master/LICENSE)
+[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/Jiro-Digital/starling-cli#readme)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Jiro-Digital/starling-cli/graphs/commit-activity)
+[![License: MIT](https://img.shields.io/github/license/JiroUK/starling-cli)](https://github.com/Jiro-Digital/starling-cli/blob/master/LICENSE)
 
 > A CLI tool for querying your Starling Bank account
 
@@ -38,8 +38,8 @@ starling dd
 
 🏢 **Jiro**
 
-* Website: https://jiro.uk
-* Github: [@JiroUK](https://github.com/JiroUK)
+* Website: https://jiro.digital
+* Github: [@Jiro-Digital](https://github.com/Jiro-Digital)
 
 ## Show your support
 
@@ -48,6 +48,6 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2020 [Jiro Digital Ltd](https://github.com/JiroUK).
+Copyright © 2020 [Jiro Digital Ltd](https://github.com/Jiro-Digital).
 
-This project is [MIT](https://github.com/JiroUK/starling-cli/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/Jiro-Digital/starling-cli/blob/master/LICENSE) licensed.
