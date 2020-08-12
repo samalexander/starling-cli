@@ -34,12 +34,12 @@
     "boxen": "^4.2.0",
     "chalk": "^4.1.0",
     "columnify": "^1.5.4",
-    "commander": "^5.1.0",
+    "commander": "^6.0.0",
     "configstore": "^5.0.1",
     "esm": "^3.2.25",
-    "inquirer": "^7.3.2",
-    "open": "^7.0.4",
-    "ora": "^4.0.4",
+    "inquirer": "^7.3.3",
+    "open": "^7.1.0",
+    "ora": "^5.0.0",
     "update-notifier": "^4.1.0"
   },
   "devDependencies": {
