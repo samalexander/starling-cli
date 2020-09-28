@@ -43,6 +43,6 @@
     "update-notifier": "^4.1.0"
   },
   "devDependencies": {
-    "standard-version": "^8.0.2"
+    "standard-version": "^9.0.0"
   }
 }
