@@ -30,17 +30,17 @@
   "license": "MIT",
   "dependencies": {
     "accounting": "^0.4.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.0",
     "boxen": "^4.2.0",
     "chalk": "^4.1.0",
     "columnify": "^1.5.4",
-    "commander": "^6.0.0",
+    "commander": "^6.2.1",
     "configstore": "^5.0.1",
     "esm": "^3.2.25",
     "inquirer": "^7.3.3",
-    "open": "^7.1.0",
+    "open": "^7.3.0",
     "ora": "^5.0.0",
-    "update-notifier": "^4.1.0"
+    "update-notifier": "^5.0.1"
   },
   "devDependencies": {
     "standard-version": "^9.0.0"
