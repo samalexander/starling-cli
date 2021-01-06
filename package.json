@@ -1,6 +1,6 @@
 {
   "name": "starling-cli",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "A CLI tool for querying your Starling Bank account",
   "main": "src/main.js",
   "bin": {
