@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.8](https://github.com/Jiro-Digital/starling-cli/compare/v1.2.7...v1.2.8) (2021-05-20)
+
+
+### Bug Fixes
+
+* upgrade dependencies ([fa21041](https://github.com/Jiro-Digital/starling-cli/commit/fa21041c584e764e62cffb596a7c6867fa7dca4d))
+
 ### [1.2.7](https://github.com/Jiro-Digital/starling-cli/compare/v1.2.6...v1.2.7) (2021-01-06)
 
 
