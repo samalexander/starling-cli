@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/Jiro-Digital/starling-cli/compare/v1.2.8...v2.0.0) (2021-06-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* only supports node >= 12
+
+### Features
+
+* make pure esm package ([133fdb2](https://github.com/Jiro-Digital/starling-cli/commit/133fdb25af34080c084560a3102dbd2b7f5f2851))
+
 ### [1.2.8](https://github.com/Jiro-Digital/starling-cli/compare/v1.2.7...v1.2.8) (2021-05-20)
 
 
