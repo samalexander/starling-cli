@@ -2,9 +2,13 @@
   "name": "starling-cli",
   "version": "1.2.8",
   "description": "A CLI tool for querying your Starling Bank account",
+  "type": "module",
   "main": "src/main.js",
   "bin": {
-    "starling": "bin/starling"
+    "starling": "bin/starling.js"
+  },
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "publishConfig": {
     "access": "public"
@@ -34,11 +38,11 @@
     "boxen": "^5.0.1",
     "chalk": "^4.1.1",
     "columnify": "^1.5.4",
-    "commander": "^6.2.1",
-    "configstore": "^5.0.1",
+    "commander": "^7.2.0",
+    "configstore": "^6.0.0",
     "esm": "^3.2.25",
-    "inquirer": "^7.3.3",
-    "open": "^7.4.2",
+    "inquirer": "^8.1.0",
+    "open": "^8.2.0",
     "ora": "^5.4.0",
     "update-notifier": "^5.1.0"
   },
