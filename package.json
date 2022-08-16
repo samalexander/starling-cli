@@ -23,14 +23,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jiro-Digital/starling-cli.git"
+    "url": "git+https://github.com/samalexander/starling-cli.git"
   },
   "keywords": [
     "starling",
     "cli",
     "terminal"
   ],
-  "author": "Jiro",
+  "author": "Sam Alexander",
   "license": "MIT",
   "dependencies": {
     "accounting": "^0.4.1",
