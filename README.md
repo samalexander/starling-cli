@@ -36,10 +36,9 @@ starling dd
 
 ## Author
 
-🏢 **Jiro**
+🏢 **Sam Alexander**
 
-* Website: https://jiro.digital
-* Github: [@Jiro-Digital](https://github.com/Jiro-Digital)
+* Github: [@samalexander](https://github.com/samalexander)
 
 ## Show your support
 
