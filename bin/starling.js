@@ -9,6 +9,7 @@ import {
   checkBalance,
   listTransactions,
   listMandates,
+  listAccounts
 } from "../src/main.js";
 
 const pkg = JSON.parse(
@@ -51,6 +52,14 @@ program
   .description("Fetch the Direct Debit mandates on your Starling account")
   .action(() => {
     listMandates(config);
+  });
+
+program
+  .command('accounts')
+  .alias('a')
+  .description('List your Starling bank accounts')
+  .action(() => {
+    listAccounts(config);
   });
 
 program.parse(process.argv);

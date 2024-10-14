@@ -169,6 +169,25 @@ export async function listMandates(config) {
     }
 }
 
+export async function listAccounts(config) {
+    const spinner = ora({ text: 'Fetching accounts...', color: 'yellow' }).start();
+    try {
+      const token = config.get('token');
+      const { data } = await axios.get('https://api.starlingbank.com/api/v2/accounts', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      
+      spinner.stop();
+
+      displayAccounts(data.accounts);
+      
+    } catch (error) {
+      spinner.fail(error.response?.data?.error?.message || 'An error occurred while fetching accounts');
+    }
+  }
+
 function displayTransactions(feedItems) {
     const columns = columnify(feedItems.map(fi => {
         return {
@@ -192,4 +211,22 @@ function displayMandates(mandateItems) {
         };
     }));
     console.log(columns);
+}
+
+function displayAccounts(accounts) {
+
+      const accountData = accounts.map(account => ({
+        name: account.name,
+        type: account.accountType,
+        currency: account.currency,
+        uuid: account.accountUid,
+        category: account.defaultCategory
+      }));
+  
+      const columns = columnify(accountData, {
+        columns: ['name', 'type', 'currency', 'uuid', 'category' ],
+        headingTransform: heading => chalk.white(heading.toUpperCase())
+      });
+  
+      console.log(columns);
 }
