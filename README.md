@@ -21,6 +21,10 @@ starling i
 ## Usage
 The following commands (and their aliases) can be used.
 ```sh
+starling accounts # List your Starling accounts
+#OR
+starling a
+
 starling balance # Fetch your Starling account balance
 #OR
 starling b
