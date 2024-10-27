@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/samalexander/starling-cli/compare/v2.0.2...v2.1.0) (2024-10-27)
+
+
+### Features
+
+* Optionally include feed-item-ids in transaction output ([57489a5](https://github.com/samalexander/starling-cli/commit/57489a5eae942fce3d9d11390fca8b1c5d8ff847))
+
 ### [2.0.2](https://github.com/samalexander/starling-cli/compare/v2.0.1...v2.0.2) (2024-10-15)
 
 ### [2.0.1](https://github.com/samalexander/starling-cli/compare/v2.0.0...v2.0.1) (2024-02-29)
