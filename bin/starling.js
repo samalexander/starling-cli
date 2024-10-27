@@ -42,8 +42,9 @@ program
   .command("transactions")
   .alias("tx")
   .description("Fetch your Starling account transactions")
-  .action(() => {
-    listTransactions(config);
+  .option("-u, --uuids", "include transaction (feed-item) UUIDs in output")
+  .action((options) => {
+    listTransactions(config, options.uuids);
   });
 
 program

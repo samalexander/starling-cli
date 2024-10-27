@@ -116,7 +116,7 @@ export async function checkBalance(config) {
     }
 }
 
-export async function listTransactions(config) {
+export async function listTransactions(config, includeFeedItemUuidsInOutput) {
     const accounts = config.get('accounts');
     const questions = [
         {
@@ -147,7 +147,7 @@ export async function listTransactions(config) {
             }
         });
         spinner.stop();
-        displayTransactions(data.feedItems);
+        displayTransactions(data.feedItems, includeFeedItemUuidsInOutput);
     } catch ({ error }) {
         spinner.fail(error.error_description);
     }
@@ -188,14 +188,16 @@ export async function listAccounts(config) {
     }
   }
 
-function displayTransactions(feedItems) {
+function displayTransactions(feedItems, includeFeedItemUuidsInOutput) {
     const columns = columnify(feedItems.map(fi => {
+        const transactionId = includeFeedItemUuidsInOutput ? { id: fi.feedItemUid } : {};
         return {
             time: formatDate(new Date(fi.transactionTime), true),
             status: statusMap[fi.status](fi.status),
             amount: directionMap[fi.direction](accounting.formatMoney(fi.amount.minorUnits / 100, { symbol: currencyMap[fi.amount.currency] })),
             name: fi.counterPartyName,
-            type: fi.source
+            type: fi.source,
+            ... transactionId
         };
     }));
     console.log(columns);
